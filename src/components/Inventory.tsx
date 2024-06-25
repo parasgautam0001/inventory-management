@@ -59,15 +59,15 @@ const Inventory = () => {
               <td className='icon-class'>
                 {isAdmin ? (
                   <>
-                    <img width={20} height={20} src={product.isDisabled ? PencilDisabled : PencilEnabled} onClick={() => { !product.isDisabled && handleEdit(product) }} alt='' />
-                    <img width={20} height={20} src={product.isDisabled ? EyeClose : EyeOpen} onClick={() => handleDisable(product.name)} alt='' />
-                    <img width={20} height={20} src={TrashEnabled} onClick={() => handleDelete(product.name)} alt='' />
+                    <img className='edit-icons' src={product.isDisabled ? PencilDisabled : PencilEnabled} onClick={() => { !product.isDisabled && handleEdit(product) }} alt='' />
+                    <img className='edit-icons' src={product.isDisabled ? EyeClose : EyeOpen} onClick={() => handleDisable(product.name)} alt='' />
+                    <img className='edit-icons' src={TrashEnabled} onClick={() => handleDelete(product.name)} alt='' />
                   </>
                 ) : (
                   <>
-                    <img width={20} height={20} src={PencilDisabled} alt='' />
-                    <img width={20} height={20} src={EyeDisabled} alt='' />
-                    <img width={20} height={20} src={TrashDisabled} alt='' />
+                    <img className='edit-icons' src={PencilDisabled} alt='' />
+                    <img className='edit-icons' src={EyeDisabled} alt='' />
+                    <img className='edit-icons' src={TrashDisabled} alt='' />
                   </>
                 )}
               </td>

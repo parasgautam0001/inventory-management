@@ -54,6 +54,12 @@
   gap: 20px;
 }
 
+.edit-icons {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .product-table th, .product-table td {
     padding: 8px;

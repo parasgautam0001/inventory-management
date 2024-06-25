@@ -15,7 +15,7 @@ const Header: React.FC = () => {
       <h1 className='inv-header'>Inventory Stats</h1>
       <div className="toggle-container">
         <span>admin</span>
-        <img src={!isAdmin ? ToggleOn : ToggleOff} width={40} height={40} alt='' onClick={() => dispatch(setAdminStatus(!isAdmin))} />
+        <img src={!isAdmin ? ToggleOn : ToggleOff} className='toggle-icon' alt='' onClick={() => dispatch(setAdminStatus(!isAdmin))} />
         <span>user</span>
       </div>
     </header>
