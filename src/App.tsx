@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import Header from './components/Header';
+import { setProducts } from './redux/actions';
+import { useDispatch } from 'react-redux';
+import { Product } from './types/types';
+import View from './components/View';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    (async function () {
+      try {
+        const response = await fetch('https://dev-0tf0hinghgjl39z.api.raw-labs.com/inventory');
+        if (!response.ok) {
+          throw new Error(`Error Status: ${response.status}`);
+        }
+        const data = await response.json();
+        const updatedData = data.map((product: Product) => ({
+          ...product,
+          isDisabled: false,
+        }));
+        dispatch(setProducts(updatedData));
+      } catch (error) {
+        console.error('Error: ', error);
+      }
+    })();
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+        <Header />
+        <View />
     </div>
   );
-}
+};
 
 export default App;

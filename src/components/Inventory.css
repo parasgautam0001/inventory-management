@@ -1,0 +1,87 @@
+.product-table-container {
+  padding: 0 12px;
+  overflow-x: auto;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+}
+
+.product-table thead {
+  color: rgb(101, 151, 20);
+}
+
+.title-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  width: fit-content;
+  padding: 8px;
+  background: black;
+}
+
+.product-table th, .product-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.product-table .disabled {
+  color: #ccc;
+}
+
+.product-table button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0 5px;
+  color: #333;
+}
+
+.product-table button:disabled {
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.icon-class {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-table th, .product-table td {
+    padding: 8px;
+  }
+
+  .product-table button {
+    font-size: 0.9em;
+    margin: 0 3px;
+  }
+
+  .product-table-container {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-table th, .product-table td {
+    padding: 6px;
+    font-size: 0.9em;
+  }
+
+  .product-table button {
+    font-size: 0.8em;
+    margin: 0 2px;
+  }
+
+  .title-mark {
+    padding: 4px;
+    font-size: 0.9em;
+  }
+}
